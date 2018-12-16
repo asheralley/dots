@@ -98,7 +98,7 @@ let g:airline_theme = "jellybeans"
 
 
 " Turn on line numbers
-set nu
+set relativenumber 
 " Turn on syntax highlighting
 syntax on
 " It hides buffers instead of closing them.
@@ -144,6 +144,7 @@ set background=dark
 " Ctrl+P opens a fuzzy filesearch window (powered by Fzf)
 nnoremap <C-p> :Files<CR>
 
+" Buffer manipulation
 nnoremap <C-n> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
 nnoremap <C-X> :bdelete<CR>
@@ -170,5 +171,9 @@ nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
 nnoremap cc :let @/ = ""<cr>
 " \e to open a NerdTree at in the directory of the currently viewed file
 nnoremap <Leader>e :Ex<CR>
+nnoremap <Leader>t :NERDTreeToggle<CR>
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
 " I said write it!
 cmap w!! w !sudo tee % >/dev/null
