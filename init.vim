@@ -65,12 +65,13 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<Leader>u"
+let g:UltiSnipsExpandTrigger="<Leader>q"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 Plug 'vim-syntastic/syntastic'
 
+Plug 'mattn/emmet-vim'
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
